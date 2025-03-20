@@ -1,17 +1,10 @@
 import argparse
 
 
-def list_into_str(range_m):
-    range_m_str = ''
-    for i in range_m:
-        range_m_str += str(i)
-    return range_m_str
-
-
 def make_path(range_ms):
     path = ''
     for i in range_ms:
-        path += i[0]
+        path += str(i[0])
     return path
 
 
@@ -24,11 +17,10 @@ def circle(n, m):
         while len(range_m) < m:
             range_m.append(circle_arg[1])
             circle_arg.append(circle_arg.pop(0))
-        range_m_str = list_into_str(range_m)
-        if range_m_str in range_ms:
+        if range_m in range_ms:
             break
         else:
-            range_ms.append(list_into_str(range_m_str))
+            range_ms.append(range_m)
     return make_path(range_ms)
 
 
