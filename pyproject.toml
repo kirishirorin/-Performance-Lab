@@ -4,6 +4,9 @@ version = "0.1.0"
 description = ""
 authors = ["Igor <cherkashov270999@gmail.com>"]
 readme = "README.md"
+packages = [
+  { include = "task1" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.12"
@@ -12,3 +15,10 @@ python = "^3.12"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.scripts]
+task1 = "task1.task1:main"
+task2 = "task2.task2:main"
+task3 = "task3.task3:main"
+task4 = "task4.task4:main"
