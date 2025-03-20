@@ -25,8 +25,9 @@ def define_point(file1, file2):
             result += '0\n'
     return result
 
+
 def main():
-    parser = argparse.ArgumentParser(description='Положение точки относительно окружности')
+    parser = argparse.ArgumentParser(description='Положение точки')
     parser.add_argument('file1', type=str)
     parser.add_argument('file2', type=str)
     args = parser.parse_args()

@@ -40,6 +40,5 @@ def main():
     print(circle(args.n, args.m))
 
 
-
 if __name__ == '__main__':
     main()

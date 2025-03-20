@@ -1,6 +1,7 @@
 import argparse
 import math
 
+
 def nums_into_list(file):
     with open(file, 'r') as file:
         nums_list = list(map(lambda number: int(number[:-1]), file.readlines()))

@@ -1,5 +1,5 @@
-import json
 import argparse
+import json
 
 
 def find_value(id, values_file):
@@ -19,10 +19,13 @@ def make_report(values_file, tests_file):
     with open(tests_file, 'r') as tests:
         tests_dict = json.load(tests)
         report = {'tests': []}
+
         def inner(tests, report):
             current_report = report
             for elem in tests:
-                add_to_report = {'id': elem['id'], 'title': elem['title'], 'value': find_value(elem['id'], values_file)}
+                add_to_report = {'id': elem['id'],
+                                 'title': elem['title'],
+                                 'value': find_value(elem['id'], values_file)}
                 if elem.get('values', None):
                     add_to_report.update({'values': []})
                     add_to_report['values'] = inner(elem['values'], [])
@@ -40,6 +43,7 @@ def main():
     args = parser.parse_args()
     report_dict = make_report(args.values_file, args.tests_file)
     write_into_report_file(report_dict, args.report_file)
+
 
 if __name__ == '__main__':
     main()
